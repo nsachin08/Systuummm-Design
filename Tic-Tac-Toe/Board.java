@@ -10,6 +10,15 @@ public class Board {
         this.size = size;
         board = new PlayingPiece[size][size];
     }
+
+    public boolean addPiece(int row, int column , PlayingPiece piece){
+        if(board[row][column] != null){
+            return false;
+        }
+        board[row][column] = piece;
+        return true;
+    }
+
     public List<Pair<Integer,Integer>> getFreeCells(){
         List<Pair<Integer,Integer>> freeCells = new ArrayList<>();
         for(int i=0;i<size;i++){
