@@ -8,6 +8,7 @@ public class Card{
     static int PIN_NUMBER = 112211;
 
     //BankAccount
+    private UserBankAccount bankAccount;
 
     public boolean isCorrectPINentered(int pin){
         if(pin == PIN_NUMBER){
@@ -18,15 +19,15 @@ public class Card{
     }
 
     public int getBankBalance(){
-        return ;
+        return BankAccount.balance;
     }
 
-    public void deductBankBalance(){
-
+    public void deductBankBalance(int amt){
+            BankAccount.deductBankBalance(amt);
     }
 
-    public void setBankAccount(){
-        
+    public void setBankAccount(UserBankAccount UserBankAccount){
+        this.bankAccount = UserBankAccount;
     }
 
 }
